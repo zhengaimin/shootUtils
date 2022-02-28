@@ -1,0 +1,62 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* Basic Options */
+    "target": "es2016", // 具体目标版本:“es3”(默认)，“es5”，“es15”，“es2016”，“es2017”，“es2019”，“es2020”，“es2021”，“esnext”。
+    "module": "ESNext", // 指定模块代码生成:'none'， 'commonjs'， 'amd'， 'system'， 'umd'， 'es2015'， 'es2020'，或'ESNext'。
+    // 指定要包含在编译中的库文件。
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "allowJs": true, // 允许javascript文件被编译。
+    "declaration": true, // 生成相应的 .d.ts 文件。
+    "declarationMap": true, // 为每一个 .d.ts 生成一个 map 文件
+    "declarationDir": "./dist/types", // 定义文件输出目录
+    "sourceMap": true, // 生成 map 文件
+    "outDir": "./dist", // 将输出结构重定向到目录。
+    "rootDir": "./", // 指定输入文件的根目录。使用——outDir控制输出目录结构。
+    "composite": false, // 使项目编译
+
+    /* Strict Type-Checking Options */
+    "strict": true, // 启用所有严格的类型检查选项。
+    "noImplicitThis": true, // 对隐含的“any”类型的“this”表达式引发错误。
+
+    /* Additional Checks */
+    "noUnusedLocals": true, // 报告未使用的本地变量的错误。
+
+    /* Module Resolution Options */
+    "moduleResolution": "node", // 指定模块解析策略:'node' (node .js)或'classic' (TypeScript在1.6之前版本)。
+
+    /* Base directory to resolve non-absolute module names. */
+    "baseUrl": "./",
+
+    /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    "paths": {
+      "@/*": ["src/*"],
+    },
+    // 要包括在编译中的类型声明文件。
+    "types": [
+      "node",
+      "@types/jest"
+    ],
+    // 通过为所有导入创建名称空间对象，实现CommonJS和ES模块之间的互操作性。意味着“allowSyntheticDefaultImports”。
+    "esModuleInterop": true,
+
+    /* Advanced Options */
+    "skipLibCheck": true, // 跳过声明文件的类型检查。
+    "forceConsistentCasingInFileNames": true, // 禁止对同一文件的引用大小写不一致。
+  },
+  "include": [
+    "src/**/*",
+    "tests"
+  ],
+  "workspaces": [
+    "src/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
+}
